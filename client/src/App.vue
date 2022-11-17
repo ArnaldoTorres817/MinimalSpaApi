@@ -5,7 +5,7 @@
 
 <template>
   <div class="text-center selection:bg-green-100">
-
+    <h1 class="text-3xl font-light">Weather Forecast</h1>
   </div>
 </template>
 
