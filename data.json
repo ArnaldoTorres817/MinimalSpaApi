@@ -1,0 +1,27 @@
+[
+  {
+    "date": "2022-11-18",
+    "temperatureC": 19,
+    "summary": "Scorching"
+  },
+  {
+    "date": "2022-11-19",
+    "temperatureC": 17,
+    "summary": "Bracing"
+  },
+  {
+    "date": "2022-11-20",
+    "temperatureC": 16,
+    "summary": "Balmy"
+  },
+  {
+    "date": "2022-11-21",
+    "temperatureC": 31,
+    "summary": "Hot"
+  },
+  {
+    "date": "2022-11-22",
+    "temperatureC": 2,
+    "summary": "Sweltering"
+  }
+]
