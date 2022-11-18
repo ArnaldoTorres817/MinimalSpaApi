@@ -22,7 +22,7 @@ class InMemoryWeatherForecastStore : IWeatherForecastStore
             {
                 PropertyNameCaseInsensitive = true
             });
-            if (data is null && !data!.Any())
+            if (data is null || !data.Any())
                 throw new Exception();
             return new LinkedList<WeatherForecast>(data!);
         }
