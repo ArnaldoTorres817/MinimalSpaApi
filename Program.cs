@@ -1,21 +1,23 @@
 using MinimalWebApi;
+using MinimalWebApi.Apis;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<IWeatherForecastStore, InMemoryWeatherForecastStore>();
+builder.Services.AddCors();
 
 var app = builder.Build();
 
-app.MapGet("/weatherforecast", (IWeatherForecastStore wfStore) =>
+var basePath = "/api";
+
+app.UseCors(options =>
 {
-    return wfStore.Get();
+    options.AllowAnyOrigin();
 });
 
-app.MapPost("/weatherforecast", (WeatherForecast wf, IWeatherForecastStore wfStore) =>
-{
-    wfStore.Save(wf);
-    return Results.Created(Guid.NewGuid().ToString(), wf);
-});
+app.UsePathBase(new PathString(basePath));
+
+app.RegisterWeatherForecastApi();
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
